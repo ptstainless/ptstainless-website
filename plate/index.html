@@ -172,6 +172,17 @@
     .drawer__close svg { width: 20px; height: 20px; }
     .drawer__nav a { display: block; padding: 14px 6px; font-size: 16px; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--paper-2); }
     .drawer__nav a:hover { color: var(--orange); }
+    .drawer__nav-toggle {
+      display: flex; justify-content: space-between; align-items: center; width: 100%;
+      padding: 14px 6px; font-size: 16px; font-weight: 500; color: var(--ink);
+      border: 0; border-bottom: 1px solid var(--paper-2); background: none; text-align: left; cursor: pointer;
+    }
+    .drawer__nav-toggle svg { width: 18px; height: 18px; color: var(--ink-soft); flex-shrink: 0; transition: transform .2s; }
+    .drawer__nav-toggle.is-open svg { transform: rotate(180deg); }
+    .drawer__submenu { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); background: var(--paper); }
+    .drawer__submenu.is-open { max-height: 600px; }
+    .drawer__submenu a { display: block; padding: 12px 6px 12px 20px; font-size: 14.5px; font-weight: 400; color: var(--ink-muted); border-bottom: 1px solid var(--paper-2); }
+    .drawer__submenu a:hover { color: var(--orange); }
     .drawer__cta { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
 
     /* ============================================
@@ -380,7 +391,21 @@
       </div>
       <nav class="drawer__nav" aria-label="เมนูมือถือ">
         <a href="/#about">เกี่ยวกับเรา</a>
-        <a href="/#products">สินค้า</a>
+        <button type="button" class="drawer__nav-toggle" id="products-toggle" aria-expanded="false">
+          สินค้า
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="drawer__submenu" id="products-submenu">
+          <a href="/#products">ท่อกลมสแตนเลส</a>
+          <a href="/#products">ท่อเหลี่ยมสแตนเลส</a>
+          <a href="/plate">แผ่นสแตนเลส</a>
+          <a href="/#products">ฉากสแตนเลส</a>
+          <a href="/#products">เพลาสแตนเลส</a>
+          <a href="/#products">แบนสแตนเลส</a>
+          <a href="/#products">รางสแตนเลส</a>
+          <a href="/#products">อุปกรณ์สแตนเลส</a>
+          <a href="/#products">วัสดุสิ้นเปลืองสแตนเลส</a>
+        </div>
         <a href="/#features">จุดเด่นของเรา</a>
         <a href="/#portfolio">ผลงานของเรา</a>
         <a href="/#contact">ติดต่อเรา</a>
@@ -671,6 +696,14 @@
     hamburger.addEventListener('click', openDrawer);
     drawerClose.addEventListener('click', closeDrawer);
     drawerScrim.addEventListener('click', closeDrawer);
+
+    var productsToggle = document.getElementById('products-toggle');
+    var productsSubmenu = document.getElementById('products-submenu');
+    productsToggle.addEventListener('click', function() {
+      var isOpen = productsSubmenu.classList.toggle('is-open');
+      productsToggle.classList.toggle('is-open', isOpen);
+      productsToggle.setAttribute('aria-expanded', isOpen);
+    });
 
     var header = document.getElementById('site-header');
     window.addEventListener('scroll', function() {
