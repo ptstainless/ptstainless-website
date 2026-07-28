@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0B2545">
-  <title>เพลากลมสแตนเลส ชลบุรี เกรด 304/316L งานเครื่องจักร-งานกลึง | พีที สแตนเลส ชลบุรี</title>
-  <meta name="description" content="เพลากลมสแตนเลสชลบุรี (เพลาตัน Solid Round Bar) เกรด 304, 316L ขนาด Ø3–250 มม. สำหรับงานเครื่องจักร งานกลึง เพลาส่งกำลัง สต็อกพร้อมส่งทั่วชลบุรี สอบถามราคาโทร 088-896-6878 หรือแอดไลน์ @ptstainless">
-  <link rel="canonical" href="https://www.ptstainlesschonburi.com/shaft">
-  <meta property="og:title" content="เพลากลมสแตนเลส ชลบุรี เกรด 304/316L งานเครื่องจักร-งานกลึง | พีที สแตนเลส ชลบุรี">
-  <meta property="og:description" content="เพลากลมสแตนเลสชลบุรี (เพลาตัน Solid Round Bar) เกรด 304, 316L ขนาด Ø3–250 มม. สำหรับงานเครื่องจักร งานกลึง สต็อกพร้อมส่ง สอบถามราคาโทร-ไลน์ได้เลย">
+  <title>แบนสแตนเลส ชลบุรี เกรด 304 ผิวเงา-ผิวด้าน หนา 3–10 มม. | พีที สแตนเลส ชลบุรี</title>
+  <meta name="description" content="แบนสแตนเลสชลบุรี (Flat Bar) เกรด 304 ความกว้าง 1/2 – 8 นิ้ว ความหนา 3.0 – 10.0 มม. มีทั้งผิวเงา (BA) และผิวด้าน สต็อกพร้อมส่งทั่วชลบุรี สอบถามราคาโทร 088-896-6878 หรือแอดไลน์ @ptstainless">
+  <link rel="canonical" href="https://www.ptstainlesschonburi.com/flat-bar">
+  <meta property="og:title" content="แบนสแตนเลส ชลบุรี เกรด 304 ผิวเงา-ผิวด้าน | พีที สแตนเลส ชลบุรี">
+  <meta property="og:description" content="แบนสแตนเลสชลบุรี (Flat Bar) เกรด 304 กว้าง 1/2 – 8 นิ้ว หนา 3.0 – 10.0 มม. ผิวเงา (BA) และผิวด้าน สต็อกพร้อมส่ง สอบถามราคาโทร-ไลน์ได้เลย">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="th_TH">
-  <meta property="og:url" content="https://www.ptstainlesschonburi.com/shaft">
-  <meta property="og:image" content="https://www.ptstainlesschonburi.com/shaft/assets/hero.jpg">
+  <meta property="og:url" content="https://www.ptstainlesschonburi.com/flat-bar">
+  <meta property="og:image" content="https://www.ptstainlesschonburi.com/flat-bar/assets/hero.jpg">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17623331117"></script>
@@ -190,7 +190,8 @@
        ============================================ */
     .hero { position: relative; display: flex; align-items: center; color: var(--white); background: var(--navy); overflow: hidden; isolation: isolate; min-height: 420px; }
     .hero__bg { position: absolute; inset: 0; z-index: 0; }
-    .hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    /* รูป hero หน้านี้เป็นแนวตั้ง ตัวสินค้าอยู่ค่อนไปทางล่างของภาพ จึงครอปต่ำกว่าหน้าอื่น */
+    .hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 68%; }
     .hero__overlay {
       position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(180deg, rgba(6,23,46,.55) 0%, rgba(6,23,46,.8) 65%, rgba(6,23,46,.92) 100%),
@@ -226,6 +227,26 @@
     .card__title { font-size: 15.5px; font-weight: 700; color: var(--navy); margin-bottom: 6px; letter-spacing: -.005em; }
     .card__desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; }
     .card--grade { border-left: 3px solid var(--orange); }
+
+    .card--finish { padding: 0; overflow: hidden; }
+    .card__img {
+      position: relative; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+      background-image: repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 12px, var(--line) 12px, var(--line) 24px);
+    }
+    .card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card__img-label {
+      background: rgba(11,37,69,.85); color: var(--white); font-weight: 800; font-size: 13px;
+      padding: 6px 16px; border-radius: 999px; letter-spacing: .02em;
+    }
+    .card__img > img + .card__img-label {
+      position: absolute; top: 12px; left: 12px;
+    }
+    .card--finish .card__body { padding: 18px 20px 20px; }
+    .card--finish .card__title { margin-top: 2px; }
+
+    /* grade callout above the finish cards */
+    .grade-note { margin-bottom: 16px; }
+    .finish-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 
     /* ============================================
        Trust stats
@@ -419,14 +440,14 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__bg">
-      <img src="/shaft/assets/hero.jpg" alt="เพลากลมสแตนเลสจากคลังสินค้าพีที สแตนเลส ชลบุรี" loading="eager">
+      <img src="/flat-bar/assets/hero.jpg" alt="แบนสแตนเลสเกรด 304 จากคลังสินค้าพีที สแตนเลส ชลบุรี" loading="eager">
     </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <div class="container">
         <div class="hero__badge">สต็อกพร้อมส่งทันที</div>
-        <h1 class="hero__title">เพลากลม<span>สแตนเลส</span></h1>
-        <p class="hero__desc">จำหน่ายเพลากลมสแตนเลส (เพลาตัน Solid Round Bar) เกรด 304 และ 316L ขนาดเส้นผ่านศูนย์กลาง Ø3 – 250 มม. สำหรับงานเครื่องจักร งานกลึง และงานส่งกำลัง พร้อมบริการจัดส่งถึงหน้างานทั่วชลบุรี สอบถามราคาได้ทันทีทางโทรหรือไลน์</p>
+        <h1 class="hero__title">แบน<span>สแตนเลส</span></h1>
+        <p class="hero__desc">จำหน่ายแบนสแตนเลส (Flat Bar) เกรด 304 ความกว้างตั้งแต่ 1/2 นิ้ว ถึง 8 นิ้ว ความหนา 3.0 – 10.0 มม. มีทั้งผิวเงา (BA) และผิวด้าน สำหรับงานโครงสร้าง ราวกันตก และงานเชื่อมประกอบ พร้อมบริการจัดส่งถึงหน้างานทั่วชลบุรี สอบถามราคาได้ทันทีทางโทรหรือไลน์</p>
         <div class="hero__cta">
           <a href="tel:0888966878" class="btn btn--primary btn--lg" onclick="reportTelClick()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z"></path></svg>
@@ -442,24 +463,33 @@
   </section>
 
   <main>
-    <!-- Grades -->
+    <!-- Grade + finish -->
     <section class="section">
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">เลือกให้ตรงงาน</span>
-          <h2 class="section-title">เกรดเพลาสแตนเลสที่มีจำหน่าย</h2>
-          <p class="section-sub">เลือกเกรดให้เหมาะกับงาน สอบถามทีมงานได้ถ้าไม่แน่ใจ</p>
+          <h2 class="section-title">เกรดและผิวแบนสแตนเลสที่มีจำหน่าย</h2>
+          <p class="section-sub">เลือกผิวให้เหมาะกับงาน สอบถามทีมงานได้ถ้าไม่แน่ใจ</p>
         </div>
-        <div class="cards-grid">
-          <div class="card card--grade">
-            <div class="card__badge">304</div>
-            <div class="card__title">ยอดนิยม</div>
-            <p class="card__desc">เกรดมาตรฐานที่ใช้กันมากที่สุด เนื้อแน่น แข็งแรง ทนสนิมและการกัดกร่อนได้ดี ราคาเหมาะสม เหมาะกับงานเครื่องจักร งานกลึง เพลาส่งกำลัง และงานทั่วไป</p>
+        <div class="card card--grade grade-note">
+          <div class="card__badge">304</div>
+          <div class="card__title">เกรดมาตรฐานของร้าน</div>
+          <p class="card__desc">แบนสแตนเลสของร้านเป็นเกรด 304 ซึ่งเป็นเกรดที่ใช้กันมากที่สุด เนื้อแน่น แข็งแรง ทนสนิมและการกัดกร่อนได้ดี เหมาะกับงานทั่วไปทั้งภายในและภายนอกอาคาร — เลือกได้ 2 ผิวตามลักษณะงาน</p>
+        </div>
+        <div class="finish-grid">
+          <div class="card card--finish">
+            <div class="card__img"><img src="/flat-bar/assets/polished.jpg" alt="แบนสแตนเลสผิวเงา BA สะท้อนแสง" loading="lazy"><span class="card__img-label">ผิวเงา</span></div>
+            <div class="card__body">
+              <div class="card__title">ผิวเงา (BA)</div>
+              <p class="card__desc">ผิวมันวาวสะท้อนแสง สวยงาม เหมาะกับงานที่เห็นชิ้นงานชัดเจน เช่น ราวกันตก ราวบันได งานตกแต่ง และงานที่ต้องการความเรียบร้อยสวยงาม</p>
+            </div>
           </div>
-          <div class="card card--grade">
-            <div class="card__badge">316L</div>
-            <div class="card__title">ทนเคมี / ทะเล</div>
-            <p class="card__desc">ทนต่อสารเคมีและไอเกลือได้ดีกว่าเกรด 304 ตัว L หมายถึงคาร์บอนต่ำ เหมาะกับเครื่องจักรงานอาหาร งานริมทะเล และสภาพแวดล้อมที่มีการกัดกร่อนสูง</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/flat-bar/assets/matte.jpg" alt="แบนสแตนเลสผิวด้าน" loading="lazy"><span class="card__img-label">ผิวด้าน</span></div>
+            <div class="card__body">
+              <div class="card__title">ผิวด้าน</div>
+              <p class="card__desc">ผิวเรียบไม่สะท้อนแสง ราคาประหยัดกว่าผิวเงา เหมาะกับงานโครงสร้าง งานฐานยึด และงานที่ต้องนำไปเชื่อมหรือขัดต่อภายหลัง</p>
+            </div>
           </div>
         </div>
       </div>
@@ -470,21 +500,21 @@
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">การใช้งาน</span>
-          <h2 class="section-title">เพลาสแตนเลสเหมาะกับงานแบบไหน</h2>
-          <p class="section-sub">เนื้อตัน แข็งแรง กลึงขึ้นรูปได้ ใช้ได้หลากหลายงาน</p>
+          <h2 class="section-title">แบนสแตนเลสเหมาะกับงานแบบไหน</h2>
+          <p class="section-sub">เส้นแบนหน้าตัดสี่เหลี่ยม ใช้ได้ทั้งงานโครงสร้างและงานตกแต่ง</p>
         </div>
         <div class="cards-grid">
           <div class="card">
-            <div class="card__title">งานเครื่องจักร &amp; ส่งกำลัง</div>
-            <p class="card__desc">ทำเพลาส่งกำลัง เพลาขับ แกนหมุน ในเครื่องจักรและสายพานลำเลียง ทนแรงและไม่เป็นสนิม</p>
+            <div class="card__title">งานโครงสร้าง &amp; ฐานยึด</div>
+            <p class="card__desc">ทำแผ่นรอง ฐานยึด เหล็กยึดโครง และชิ้นส่วนเสริมความแข็งแรง ในงานโครงสร้างที่ต้องการวัสดุไม่เป็นสนิม</p>
           </div>
           <div class="card">
-            <div class="card__title">งานกลึง / CNC</div>
-            <p class="card__desc">เนื้อแน่น กลึงและขึ้นรูปได้ง่าย เหมาะกับงานกลึงชิ้นส่วน สลัก บูช และอะไหล่ตามแบบ</p>
+            <div class="card__title">ราวกันตก &amp; งานตกแต่ง</div>
+            <p class="card__desc">ทำราวกันตก ราวบันได กรอบ และงานตกแต่งที่ต้องการความสวยงาม เลือกผิวเงาจะได้งานที่ดูเรียบร้อยสวย</p>
           </div>
           <div class="card">
-            <div class="card__title">ลูกกลิ้ง &amp; งานซ่อมบำรุง</div>
-            <p class="card__desc">ทำลูกกลิ้ง แกนหมุน และงานซ่อมบำรุงในโรงงานที่ต้องการความทนทานและสะอาด ไม่ปนเปื้อนสนิม</p>
+            <div class="card__title">งานเชื่อมประกอบ</div>
+            <p class="card__desc">เนื้อวัสดุขึ้นรูปง่าย เจาะ ดัด และเชื่อมประกอบได้สะดวก เหมาะกับงานผลิตชิ้นส่วน งานซ่อมบำรุง และงานทำโครงตามแบบ</p>
           </div>
         </div>
       </div>
@@ -495,16 +525,18 @@
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">สเปกสินค้า</span>
-          <h2 class="section-title">สเปกเพลาสแตนเลสที่มีจำหน่าย</h2>
+          <h2 class="section-title">สเปกแบนสแตนเลสที่มีจำหน่าย</h2>
           <p class="section-sub">ครบทุกขนาด พร้อมส่งทั่วชลบุรีและใกล้เคียง</p>
         </div>
         <table class="specs-table">
-          <tr><th>เกรด (Grade)</th><td>304, 316L</td></tr>
-          <tr><th>รูปทรง (Type)</th><td>เพลากลมตัน (Solid Round Bar)</td></tr>
-          <tr><th>ขนาดเส้นผ่านศูนย์กลาง (Diameter)</th><td>Ø3 – 250 มม.</td></tr>
-          <tr><th>ความยาว (Length)</th><td>มีหลายความยาว สอบถามความยาวที่มีในสต็อก</td></tr>
+          <tr><th>เกรด (Grade)</th><td>304</td></tr>
+          <tr><th>รูปทรง (Type)</th><td>เส้นแบนสแตนเลส (Flat Bar) หน้าตัดสี่เหลี่ยมผืนผ้า</td></tr>
+          <tr><th>ความกว้าง (Width)</th><td>1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 2-1/2", 4", 8"</td></tr>
+          <tr><th>ความหนา (Thickness)</th><td>3.0, 4.5, 6.0, 8.0, 10.0 มม. (และขนาดนิ้ว เช่น 1/8", 3/16")</td></tr>
+          <tr><th>ผิว (Finish)</th><td>ผิวเงา (BA) และผิวด้าน</td></tr>
+          <tr><th>ความยาว (Length)</th><td>6 เมตร</td></tr>
         </table>
-        <p class="specs-note">* สอบถามเกรด/ขนาด/ความยาว และสต็อกปัจจุบันทางโทรหรือไลน์ได้เลยค่ะ ไม่มีการแจ้งราคาทางหน้าเว็บ</p>
+        <p class="specs-note">* สอบถามเกรด/ขนาด/ความหนา และสต็อกปัจจุบันทางโทรหรือไลน์ได้เลยค่ะ ไม่มีการแจ้งราคาทางหน้าเว็บ</p>
       </div>
     </section>
 
@@ -512,7 +544,7 @@
     <section class="section section--paper">
       <div class="container">
         <div class="cta-band">
-          <h2 class="section-title">สนใจเพลาสแตนเลส?</h2>
+          <h2 class="section-title">สนใจแบนสแตนเลส?</h2>
           <p class="section-sub">โทร-ไลน์สอบถามราคาได้เลย ทีมงานพร้อมให้คำปรึกษา</p>
           <div class="hero__cta">
             <a href="https://line.me/R/ti/p/@ptstainless" target="_blank" rel="noopener" class="btn btn--line btn--lg" onclick="reportLineClick()">
@@ -567,12 +599,12 @@
         </div>
         <div class="faq-list">
           <details class="faq-item">
-            <summary>ราคาเพลาสแตนเลสเท่าไหร่<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></summary>
-            <p>ราคาเพลาสแตนเลสเปลี่ยนตามตลาดโลหะรายวัน ทางร้านจึงไม่แจ้งราคาทางหน้าเว็บ สอบถามราคาล่าสุดได้ทันทีทางโทรหรือไลน์ ทีมงานตอบไว</p>
+            <summary>ราคาแบนสแตนเลสเท่าไหร่<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></summary>
+            <p>ราคาแบนสแตนเลสเปลี่ยนตามตลาดโลหะรายวัน ทางร้านจึงไม่แจ้งราคาทางหน้าเว็บ สอบถามราคาล่าสุดได้ทันทีทางโทรหรือไลน์ ทีมงานตอบไว</p>
           </details>
           <details class="faq-item">
-            <summary>มีสต็อกพร้อมส่งไหม<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></summary>
-            <p>มีสต็อกเพลากลมสแตนเลสหลายขนาดตั้งแต่ Ø3 มม. ถึง 250 มม. สอบถามเกรด/ขนาดที่ต้องการได้ทางโทรหรือไลน์</p>
+            <summary>ผิวเงากับผิวด้าน ต่างกันยังไง<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></summary>
+            <p>ผิวเงา (BA) จะมันวาวสะท้อนแสง สวยกว่า เหมาะกับงานที่มองเห็นชิ้นงาน เช่น ราวกันตก ราวบันได ส่วนผิวด้านจะเรียบไม่สะท้อนแสง ราคาประหยัดกว่า เหมาะกับงานโครงสร้างหรืองานที่ต้องนำไปเชื่อม-ขัดต่อ</p>
           </details>
           <details class="faq-item">
             <summary>จัดส่งพื้นที่ไหนบ้าง<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></summary>
@@ -580,7 +612,7 @@
           </details>
           <details class="faq-item">
             <summary>มีใบรับรองมาตรฐานไหม<svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></summary>
-            <p>เพลาสแตนเลสเกรดอุตสาหกรรม SUS 304 และ SUS 316L ของร้านมีใบรับรองมาตรฐานพร้อมให้ตรวจสอบ</p>
+            <p>แบนสแตนเลสเกรดอุตสาหกรรม SUS 304 ของร้านมีใบรับรองมาตรฐานพร้อมให้ตรวจสอบ</p>
           </details>
         </div>
       </div>

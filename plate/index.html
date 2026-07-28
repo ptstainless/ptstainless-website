@@ -164,7 +164,7 @@
     .drawer__panel {
       position: absolute; top: 0; right: 0; bottom: 0; width: min(86%, 340px);
       background: var(--white); transform: translateX(100%); transition: transform .35s var(--ease);
-      display: flex; flex-direction: column; padding: 18px;
+      display: flex; flex-direction: column; padding: 18px; overflow-y: auto;
     }
     .drawer.is-open .drawer__panel { transform: translateX(0); }
     .drawer__head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
@@ -180,7 +180,7 @@
     .drawer__nav-toggle svg { width: 18px; height: 18px; color: var(--ink-soft); flex-shrink: 0; transition: transform .2s; }
     .drawer__nav-toggle.is-open svg { transform: rotate(180deg); }
     .drawer__submenu { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); background: var(--paper); }
-    .drawer__submenu.is-open { max-height: 600px; }
+    .drawer__submenu.is-open { max-height: 700px; }
     .drawer__submenu a { display: block; padding: 12px 6px 12px 20px; font-size: 14.5px; font-weight: 400; color: var(--ink-muted); border-bottom: 1px solid var(--paper-2); }
     .drawer__submenu a:hover { color: var(--orange); }
     .drawer__cta { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
@@ -396,15 +396,16 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="drawer__submenu" id="products-submenu">
-          <a href="/#products">ท่อกลมสแตนเลส</a>
-          <a href="/#products">ท่อเหลี่ยมสแตนเลส</a>
+          <a href="/round-pipe">ท่อกลมสแตนเลส</a>
+          <a href="/square-pipe">ท่อเหลี่ยมสแตนเลส</a>
           <a href="/plate">แผ่นสแตนเลส</a>
-          <a href="/#products">ฉากสแตนเลส</a>
+          <a href="/checker-plate">แผ่นลายสแตนเลส</a>
+          <a href="/angle-bar">ฉากสแตนเลส</a>
           <a href="/shaft">เพลาสแตนเลส</a>
-          <a href="/#products">แบนสแตนเลส</a>
-          <a href="/#products">รางสแตนเลส</a>
-          <a href="/#products">อุปกรณ์สแตนเลส</a>
-          <a href="/#products">วัสดุสิ้นเปลืองสแตนเลส</a>
+          <a href="/flat-bar">แบนสแตนเลส</a>
+          <a href="/channel">รางสแตนเลส</a>
+          <a href="/fittings">อุปกรณ์สแตนเลส</a>
+          <a href="/consumables">วัสดุสิ้นเปลืองสแตนเลส</a>
         </div>
         <a href="/#features">จุดเด่นของเรา</a>
         <a href="/#portfolio">ผลงานของเรา</a>
