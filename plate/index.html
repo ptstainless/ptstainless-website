@@ -215,6 +215,13 @@
        ============================================ */
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .cards-grid--finish { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+
+    /* แถบสถิติความน่าเชื่อถือ (เหมือนหน้า landing อื่นทุกหน้า) */
+    .stats-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 28px; }
+    .stat-card { flex: 1; min-width: 130px; text-align: center; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 10px; }
+    .stat-num { font-size: 28px; font-weight: 800; color: var(--navy); }
+    .stat-num span { color: var(--orange); }
+    .stat-label { font-size: 12.5px; color: var(--ink-muted); margin-top: 4px; }
     .card {
       background: var(--white); border-radius: var(--radius); padding: 22px 20px;
       border: 1px solid var(--line); transition: transform .25s var(--ease), border-color .25s, box-shadow .25s;
@@ -578,6 +585,11 @@
           <span class="section-eyebrow">ทำไมต้องเรา</span>
           <h2 class="section-title">ทำไมต้องพีที สแตนเลส</h2>
           <p class="section-sub">ผู้เชี่ยวชาญงานสแตนเลสในชลบุรี</p>
+        </div>
+        <div class="stats-row">
+          <div class="stat-card"><div class="stat-num">15<span>+</span></div><div class="stat-label">ปีประสบการณ์</div></div>
+          <div class="stat-card"><div class="stat-num">500<span>+</span></div><div class="stat-label">ลูกค้าที่ไว้วางใจ</div></div>
+          <div class="stat-card"><div class="stat-num">10</div><div class="stat-label">หมวดสินค้าหลัก</div></div>
         </div>
         <div class="cards-grid">
           <div class="card">
