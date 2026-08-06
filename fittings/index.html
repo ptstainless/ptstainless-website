@@ -227,6 +227,22 @@
     .card__desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; }
     .card--grade { border-left: 3px solid var(--orange); }
 
+    .card--finish { padding: 0; overflow: hidden; }
+    .card__img {
+      position: relative; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+      background-image: repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 12px, var(--line) 12px, var(--line) 24px);
+    }
+    .card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card__img-label {
+      background: rgba(11,37,69,.85); color: var(--white); font-weight: 800; font-size: 13px;
+      padding: 6px 16px; border-radius: 999px; letter-spacing: .02em;
+    }
+    .card__img > img + .card__img-label {
+      position: absolute; top: 12px; left: 12px;
+    }
+    .card--finish .card__body { padding: 18px 20px 20px; }
+    .card--finish .card__title { margin-top: 2px; }
+
     /* ============================================
        Trust stats
        ============================================ */
@@ -468,33 +484,54 @@
           <p class="section-sub">ครบชุดจบในที่เดียว ไม่ต้องวิ่งหาหลายร้าน</p>
         </div>
         <div class="cards-grid">
-          <div class="card">
-            <div class="card__title">ข้องอ (Elbow)</div>
-            <p class="card__desc">ข้องอสแตนเลสแบบเชื่อม ขนาด 1/2" – 4" มีทั้งความหนา SCH10 และ SCH40 รวมถึงแบบผนังบาง 1.5 มม.</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/elbow.jpg" alt="ข้องอสแตนเลส 90 องศา แบบเชื่อม SUS 304L ขนาด 2 นิ้ว SCH10S" loading="lazy"><span class="card__img-label">ข้องอ</span></div>
+            <div class="card__body">
+              <div class="card__title">ข้องอ (Elbow)</div>
+              <p class="card__desc">ข้องอสแตนเลสแบบเชื่อม ขนาด 1/2" – 4" มีทั้งความหนา SCH10 และ SCH40 รวมถึงแบบผนังบาง 1.5 มม.</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">สามทาง (Tee)</div>
-            <p class="card__desc">สามทางสแตนเลสแบบเชื่อม ขนาด 1-1/4" – 4" มีทั้งสามทางเท่าและสามทางลด เช่น 4" x 2"</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/tee.jpg" alt="สามทางสแตนเลสแบบเชื่อม SUS 304L ขนาด 2 นิ้ว SCH10S" loading="lazy"><span class="card__img-label">สามทาง</span></div>
+            <div class="card__body">
+              <div class="card__title">สามทาง (Tee)</div>
+              <p class="card__desc">สามทางสแตนเลสแบบเชื่อม ขนาด 1-1/4" – 4" มีทั้งสามทางเท่าและสามทางลด เช่น 4" x 2"</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">ข้อลด (Reducer)</div>
-            <p class="card__desc">ข้อลดสแตนเลสสำหรับต่อท่อคนละขนาด ตั้งแต่ 2" ลง 1-1/2" ไปจนถึง 4" ลง 3"</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/reduce.jpg" alt="ข้อลดสแตนเลสแบบเชื่อม SUS 304L ขนาด 3 นิ้ว ลด 2 นิ้ว SCH10S" loading="lazy"><span class="card__img-label">ข้อลด</span></div>
+            <div class="card__body">
+              <div class="card__title">ข้อลด (Reducer)</div>
+              <p class="card__desc">ข้อลดสแตนเลสสำหรับต่อท่อคนละขนาด ตั้งแต่ 2" ลง 1-1/2" ไปจนถึง 4" ลง 3"</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">หน้าแปลน (Flange)</div>
-            <p class="card__desc">หน้าแปลนเชื่อมและหน้าแปลนบอด ขนาด 1/2" – 6" มาตรฐาน 10k, 150P และ PN10 มีทั้งเกรด 304 และ 316</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/flange.jpg" alt="หน้าแปลนสแตนเลสแบบเจาะรูน็อต สำหรับงานเดินท่อ" loading="lazy"><span class="card__img-label">หน้าแปลน</span></div>
+            <div class="card__body">
+              <div class="card__title">หน้าแปลน (Flange)</div>
+              <p class="card__desc">หน้าแปลนเชื่อมและหน้าแปลนบอด ขนาด 1/2" – 6" มาตรฐาน 10k, 150P และ PN10 มีทั้งเกรด 304 และ 316</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">ต่อตรงเกลียวใน (Socket)</div>
-            <p class="card__desc">ข้อต่อตรงสแตนเลสแบบเกลียวใน ขนาด 1/4" – 4" ครบ 11 ขนาด สำหรับต่อท่อเกลียวเข้าด้วยกันโดยไม่ต้องเชื่อม</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/coupling.jpg" alt="ต่อตรงเกลียวในสแตนเลส (socket) สำหรับต่อท่อเกลียวโดยไม่ต้องเชื่อม" loading="lazy"><span class="card__img-label">ต่อตรงเกลียวใน</span></div>
+            <div class="card__body">
+              <div class="card__title">ต่อตรงเกลียวใน (Socket)</div>
+              <p class="card__desc">ข้อต่อตรงสแตนเลสแบบเกลียวใน ขนาด 1/4" – 4" ครบ 11 ขนาด สำหรับต่อท่อเกลียวเข้าด้วยกันโดยไม่ต้องเชื่อม</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">นิปเปิ้ล (Nipple)</div>
-            <p class="card__desc">นิปเปิ้ลสแตนเลสเกลียวนอกสองด้าน ขนาด 1/4" – 4" ครบ 11 ขนาด สำหรับต่อระหว่างข้อต่อหรืออุปกรณ์ที่เป็นเกลียวใน</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/nipple.jpg" alt="นิปเปิ้ลสแตนเลสเกลียวนอกสองด้าน สำหรับต่อระหว่างข้อต่อเกลียวใน" loading="lazy"><span class="card__img-label">นิปเปิ้ล</span></div>
+            <div class="card__body">
+              <div class="card__title">นิปเปิ้ล (Nipple)</div>
+              <p class="card__desc">นิปเปิ้ลสแตนเลสเกลียวนอกสองด้าน ขนาด 1/4" – 4" ครบ 11 ขนาด สำหรับต่อระหว่างข้อต่อหรืออุปกรณ์ที่เป็นเกลียวใน</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">ฝาอุด (End Cap)</div>
-            <p class="card__desc">ฝาอุดแบนสแตนเลส ขนาด 3/4" – 4" สำหรับปิดปลายท่อให้เรียบร้อย</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/fittings/assets/cap.jpg" alt="ฝาอุดสแตนเลส SUS 304L ขนาด 2 นิ้ว SCH10S สำหรับปิดปลายท่อ" loading="lazy"><span class="card__img-label">ฝาอุด</span></div>
+            <div class="card__body">
+              <div class="card__title">ฝาอุด (End Cap)</div>
+              <p class="card__desc">ฝาอุดสแตนเลสทรงโค้ง แบบเชื่อมปิดปลายท่อ ขนาด 3/4" – 4" ปิดปลายท่อได้เรียบร้อยแข็งแรง</p>
+            </div>
           </div>
         </div>
       </div>
@@ -516,7 +553,7 @@
           <tr><th>หน้าแปลน (Flange)</th><td>1/2" – 6" มาตรฐาน 10k, 150P, PN10 มีทั้งแบบเชื่อมและแบบบอด</td></tr>
           <tr><th>ต่อตรงเกลียวใน (Socket)</th><td>1/4" – 4" ครบ 11 ขนาด (1/4" · 3/8" · 1/2" · 3/4" · 1" · 1-1/4" · 1-1/2" · 2" · 2-1/2" · 3" · 4")</td></tr>
           <tr><th>นิปเปิ้ล (Nipple)</th><td>1/4" – 4" ครบ 11 ขนาด เกลียวนอกสองด้าน</td></tr>
-          <tr><th>ฝาอุดแบน (End Cap)</th><td>3/4" – 4"</td></tr>
+          <tr><th>ฝาอุด (End Cap)</th><td>3/4" – 4" ทรงโค้ง แบบเชื่อมปิดปลายท่อ</td></tr>
         </table>
         <p class="specs-note">* สอบถามรุ่น/ขนาด และสต็อกปัจจุบันทางโทรหรือไลน์ได้เลยค่ะ ไม่มีการแจ้งราคาทางหน้าเว็บ</p>
       </div>
