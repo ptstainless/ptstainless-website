@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="th_TH">
   <meta property="og:url" content="https://www.ptstainlesschonburi.com/consumables">
-  <meta property="og:image" content="https://www.ptstainlesschonburi.com/assets/consumption.jpg">
+  <meta property="og:image" content="https://www.ptstainlesschonburi.com/consumables/assets/hero.jpg">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17623331117"></script>
@@ -227,6 +227,26 @@
     .card__desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; }
     .card--grade { border-left: 3px solid var(--orange); }
 
+    /* แถวที่มีทั้งการ์ดรูปและการ์ดข้อความ: ไม่ยืดการ์ดข้อความให้สูงเท่าการ์ดรูป
+       (ไม่งั้นการ์ดข้อความจะมีที่ว่างโหว่ด้านล่าง) */
+    .cards-grid--mixed { align-items: start; }
+
+    .card--finish { padding: 0; overflow: hidden; }
+    .card__img {
+      position: relative; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+      background-image: repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 12px, var(--line) 12px, var(--line) 24px);
+    }
+    .card__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card__img-label {
+      background: rgba(11,37,69,.85); color: var(--white); font-weight: 800; font-size: 13px;
+      padding: 6px 16px; border-radius: 999px; letter-spacing: .02em;
+    }
+    .card__img > img + .card__img-label {
+      position: absolute; top: 12px; left: 12px;
+    }
+    .card--finish .card__body { padding: 18px 20px 20px; }
+    .card--finish .card__title { margin-top: 2px; }
+
     /* ============================================
        Trust stats
        ============================================ */
@@ -419,7 +439,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__bg">
-      <img src="/assets/consumption.jpg" alt="วัสดุสิ้นเปลืองงานสแตนเลสจากคลังสินค้าพีที สแตนเลส ชลบุรี" loading="eager">
+      <img src="/consumables/assets/hero.jpg" alt="วัสดุสิ้นเปลืองงานสแตนเลสในสต็อกร้านพีที สแตนเลส ชลบุรี ใบเจียรและลูกผ้าขัดวางซ้อนกันเป็นตั้ง" loading="eager">
     </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
@@ -449,14 +469,20 @@
           <h2 class="section-title">วัสดุสิ้นเปลืองที่มีในสต็อก</h2>
           <p class="section-sub">ของที่ช่างสแตนเลสต้องใช้ประจำ มีครบพร้อมหยิบ</p>
         </div>
-        <div class="cards-grid">
-          <div class="card">
-            <div class="card__title">ใบตัด</div>
-            <p class="card__desc">ใบตัดสำหรับงานสแตนเลส ขนาด 4 นิ้ว (หนา 1 มม.), 14 นิ้ว (หนา 2.8 มม.) และ 16 นิ้ว (หนา 3.0 มม.) มีทั้งแบบใยสองชั้นสำหรับงานหนัก</p>
+        <div class="cards-grid cards-grid--mixed">
+          <div class="card card--finish">
+            <div class="card__img"><img src="/consumables/assets/cut.jpg" alt="ใบตัดสแตนเลสบาง 4 นิ้ว หนา 1 มม. ใยสองชั้น พร้อมกล่อง" loading="lazy"><span class="card__img-label">ใบตัด</span></div>
+            <div class="card__body">
+              <div class="card__title">ใบตัด</div>
+              <p class="card__desc">ใบตัดสำหรับงานสแตนเลส ขนาด 4 นิ้ว (หนา 1 มม.), 14 นิ้ว (หนา 2.8 มม.) และ 16 นิ้ว (หนา 3.0 มม.) มีทั้งแบบใยสองชั้นสำหรับงานหนัก</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">ใบเจียร</div>
-            <p class="card__desc">ใบเจียรขนาด 4 นิ้ว มีทั้งแบบบางสำหรับงานละเอียด และแบบมาตรฐานสำหรับลบคมและเก็บรอยเชื่อม</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/consumables/assets/grind.jpg" alt="ใบเจียรอ่อนตัวบาง 4 นิ้ว สำหรับลบคมและเก็บรอยเชื่อมสแตนเลส" loading="lazy"><span class="card__img-label">ใบเจียร</span></div>
+            <div class="card__body">
+              <div class="card__title">ใบเจียร</div>
+              <p class="card__desc">ใบเจียรขนาด 4 นิ้ว มีทั้งแบบบางสำหรับงานละเอียด และแบบมาตรฐานสำหรับลบคมและเก็บรอยเชื่อม</p>
+            </div>
           </div>
           <div class="card">
             <div class="card__title">ลวดเชื่อมไฟฟ้า</div>
