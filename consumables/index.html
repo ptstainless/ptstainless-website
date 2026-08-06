@@ -227,10 +227,6 @@
     .card__desc { font-size: 13.5px; color: var(--ink-muted); line-height: 1.6; }
     .card--grade { border-left: 3px solid var(--orange); }
 
-    /* แถวที่มีทั้งการ์ดรูปและการ์ดข้อความ: ไม่ยืดการ์ดข้อความให้สูงเท่าการ์ดรูป
-       (ไม่งั้นการ์ดข้อความจะมีที่ว่างโหว่ด้านล่าง) */
-    .cards-grid--mixed { align-items: start; }
-
     .card--finish { padding: 0; overflow: hidden; }
     .card__img {
       position: relative; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
@@ -469,7 +465,7 @@
           <h2 class="section-title">วัสดุสิ้นเปลืองที่มีในสต็อก</h2>
           <p class="section-sub">ของที่ช่างสแตนเลสต้องใช้ประจำ มีครบพร้อมหยิบ</p>
         </div>
-        <div class="cards-grid cards-grid--mixed">
+        <div class="cards-grid">
           <div class="card card--finish">
             <div class="card__img"><img src="/consumables/assets/cut.jpg" alt="ใบตัดสแตนเลสบาง 4 นิ้ว หนา 1 มม. ใยสองชั้น พร้อมกล่อง" loading="lazy"><span class="card__img-label">ใบตัด</span></div>
             <div class="card__body">
@@ -484,21 +480,33 @@
               <p class="card__desc">ใบเจียรขนาด 4 นิ้ว มีทั้งแบบบางสำหรับงานละเอียด และแบบมาตรฐานสำหรับลบคมและเก็บรอยเชื่อม</p>
             </div>
           </div>
-          <div class="card">
-            <div class="card__title">ลวดเชื่อมไฟฟ้า</div>
-            <p class="card__desc">ลวดเชื่อมไฟฟ้าสแตนเลส ขนาด 2.0 และ 2.6 มม. สำหรับงานเชื่อมธูปทั่วไป เลือกขนาดตามความหนาชิ้นงาน</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/consumables/assets/elec.jpg" alt="ลวดเชื่อมไฟฟ้าสแตนเลส AWS E308L-16 ขนาด 2.0 และ 2.6 มม." loading="lazy" style="object-position: center 72%;"><span class="card__img-label">ลวดเชื่อมไฟฟ้า</span></div>
+            <div class="card__body">
+              <div class="card__title">ลวดเชื่อมไฟฟ้า</div>
+              <p class="card__desc">ลวดเชื่อมไฟฟ้าสแตนเลส ขนาด 2.0 และ 2.6 มม. สำหรับงานเชื่อมธูปทั่วไป เลือกขนาดตามความหนาชิ้นงาน</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">ลวดเชื่อมอาร์กอน</div>
-            <p class="card__desc">ลวดเชื่อมแก๊สอาร์กอน ขนาด 1.6 มม. เกรด 308L สำหรับงานเชื่อม TIG ที่ต้องการแนวเชื่อมสวยเรียบร้อย</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/consumables/assets/argon.jpg" alt="ลวดเชื่อมแก๊สอาร์กอนสแตนเลส เกรด 308L ขนาด 1.6 มม. สำหรับงานเชื่อม TIG" loading="lazy" style="object-position: center 72%;"><span class="card__img-label">ลวดเชื่อมอาร์กอน</span></div>
+            <div class="card__body">
+              <div class="card__title">ลวดเชื่อมอาร์กอน</div>
+              <p class="card__desc">ลวดเชื่อมแก๊สอาร์กอน ขนาด 1.6 มม. เกรด 308L สำหรับงานเชื่อม TIG ที่ต้องการแนวเชื่อมสวยเรียบร้อย</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">กระดาษทรายซ้อน</div>
-            <p class="card__desc">กระดาษทรายซ้อนสำหรับขัดผิวสแตนเลส มีเบอร์ 80, 100, 120, 240, 320 และ 400 ไล่หยาบไปละเอียดจนได้ผิวเงา</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/consumables/assets/flap-disc.jpg" alt="กระดาษทรายซ้อนสำหรับขัดผิวสแตนเลส มีหลายเบอร์ตั้งแต่ 80 ถึง 400" loading="lazy" style="object-position: center 58%;"><span class="card__img-label">กระดาษทรายซ้อน</span></div>
+            <div class="card__body">
+              <div class="card__title">กระดาษทรายซ้อน</div>
+              <p class="card__desc">กระดาษทรายซ้อนสำหรับขัดผิวสแตนเลส มีเบอร์ 80, 100, 120, 240, 320 และ 400 ไล่หยาบไปละเอียดจนได้ผิวเงา</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card__title">น้ำยา</div>
-            <p class="card__desc">น้ำยาลบรอยเชื่อมสำหรับล้างคราบดำหลังเชื่อม และน้ำยาเทสเกรดสแตนเลสสำหรับตรวจเกรด</p>
+          <div class="card card--finish">
+            <div class="card__img"><img src="/consumables/assets/pickling-gel.jpg" alt="น้ำยาลบรอยเชื่อมสแตนเลสชนิดเจล สำหรับล้างคราบดำหลังเชื่อม" loading="lazy" style="object-position: center 62%;"><span class="card__img-label">น้ำยา</span></div>
+            <div class="card__body">
+              <div class="card__title">น้ำยา</div>
+              <p class="card__desc">น้ำยาลบรอยเชื่อมสำหรับล้างคราบดำหลังเชื่อม และน้ำยาเทสเกรดสแตนเลสสำหรับตรวจเกรด</p>
+            </div>
           </div>
         </div>
       </div>
