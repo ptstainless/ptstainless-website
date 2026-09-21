@@ -1,8 +1,20 @@
 {
-    "rewrites": [
-          {
-                  "source": "/",
-                  "destination": "/pt stainless - landing page.html"
-          }
-    ]
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/pt stainless - landing page.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/review",
+      "destination": "https://search.google.com/local/writereview?placeid=ChIJJ2CJiCExHTERTrJRyrIDC2o",
+      "permanent": false
+    },
+    {
+      "source": "/รีวิว",
+      "destination": "https://search.google.com/local/writereview?placeid=ChIJJ2CJiCExHTERTrJRyrIDC2o",
+      "permanent": false
+    }
+  ]
 }
