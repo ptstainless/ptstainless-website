@@ -1,5 +1,8 @@
 # STATUS
 
+ล่าสุด (2026-09-25): 🧹 **ลบฟอร์มขอใบเสนอราคาหน้าแรกออกแล้ว (FormSubmit ไม่เคยถูกยืนยัน → ข้อความลูกค้าหายหมด)** — แทนด้วยบล็อก "ขอใบเสนอราคา ทาง LINE หรือโทร" (ปุ่ม LINE `line.me/R/ti/p/@ptstainless` + โทร `tel:0888966878`, คง `id="quote"`) · ลบ `generate_lead` + โค้ดส่งฟอร์มใน JS ของ bundler + CSS ฟอร์ม · ไม่แตะ Ads (AW=52 / send_to conversion=24 ทั้งเว็บเท่าเดิม) · commit `8282c01` — **commit ในเครื่องแล้ว รอคุณนอทอนุมัติก่อน deploy** (ยังไม่ push)
+  - ✅ ตรวจแล้ว: ไม่มี `formsubmit`/`quote-form`/`generate_lead`/"ส่งฟรี" ในไฟล์ไหน (รวม template + JS ที่บีบอัด) · template `JSON.parse` ได้ · สคริปต์ inline 28 ตัวไม่มี syntax error · Chrome headless (desktop + มือถือ) บล็อกขึ้น ไม่มี error · กดปุ่ม = `click_line`/`click_call` + Ads conversion ยิงเหมือนเดิม · ไม่มีลิงก์ไหนในเว็บชี้ไป `#quote` อยู่แล้ว · ⏭️ ใน GA4 ไม่ต้องติ๊ก `generate_lead` แล้ว
+
 ล่าสุด (2026-09-24): 🚀 **GA4 นับเพิ่มอีก 3 อย่าง: คลิกแผนที่ · คลิกอีเมล · ส่งฟอร์มขอใบเสนอราคา** — commit `164b8c1` (ชื่นใจมอบงานจาก hub · deploy + ตรวจ production แล้ว)
   - ชื่อเหตุการณ์ใน GA4: **`click_map`** (ลิงก์ที่มี `google.com/maps` / `maps.app.goo.gl` / `goo.gl/maps` — แผนที่ที่ฝังในหน้าแรกไม่ใช่ลิงก์ จึงไม่นับ) · **`click_email`** (ลิงก์ `mailto:`) · **`generate_lead`** (ส่งฟอร์ม `#quote-form` หน้าแรกสำเร็จ) · ส่งแค่ `link_url`/`form_id` + `page_path` · **ไม่ส่งข้อมูลที่ลูกค้ากรอก** (ชื่อ/เบอร์/อีเมล/ข้อความ)
   - วิธีทำ: **ขยายตัวดักคลิกบรรทัดเดิม** (ไม่ได้เพิ่มตัวที่ 2) ทุกหน้า 13 หน้า · คอมเมนต์ท้ายบรรทัดเปลี่ยนเป็น `GA4 click_call/click_line/click_email/click_map - added 2026-09-24`
