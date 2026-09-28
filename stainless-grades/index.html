@@ -393,10 +393,28 @@
     .grade-table th, .grade-table td { white-space: normal; word-break: normal; overflow-wrap: normal; line-height: 1.4; }
     .grade-table thead th:first-child { background: var(--navy); }
     .grade-table tbody th { text-align: left; font-size: 13px; }
-    @media (max-width: 640px) {
+    @media (max-width: 799px) {
       .grade-table th, .grade-table td { padding: 8px 3px; font-size: 10.8px; }
       .grade-table thead th { font-size: 10.5px; padding: 8px 2px; }
       .grade-table tbody th { font-size: 10.2px; }
+    }
+
+    /* คุณนอทขอ 28 ก.ย.: คอม = หัวตาราง/ตัวหนังสือใหญ่ขึ้น กึ่งกลาง ไม่ตกบรรทัด · มือถือ = ตัวหนังสือใหญ่ขึ้น กึ่งกลาง หัวข้อตารางบรรทัดเดียว */
+    .grade-table th, .grade-table td, .grade-table tbody th { text-align: center; vertical-align: middle; }
+    .grade-table br.d { display: none; }
+    @media (min-width: 800px) {
+      .grade-table br.m { display: none; }
+      .grade-table br.d { display: inline; }
+      .grade-table th, .grade-table td { white-space: nowrap; font-size: clamp(12px, 1.12vw, 16px); padding: 14px 6px; line-height: 1.55; }
+      .grade-table thead th { font-size: clamp(15px, 1.35vw, 19px); padding: 16px 6px; }
+      .grade-table tbody th { font-size: clamp(12px, 1.12vw, 16px); }
+    }
+    @media (max-width: 799px) {
+      .grade-section-title { white-space: nowrap; font-size: clamp(13px, 4.1vw, 22px); }
+      .grade-table th, .grade-table td { font-size: 12.3px; padding: 9px 2px; line-height: 1.4; }
+      .grade-table thead th { font-size: 14px; padding: 10px 2px; }
+      .grade-table tbody th { font-size: 12px; }
+      .grade-table thead th:first-child { font-size: 12.5px; }
     }
 
   </style>
@@ -540,17 +558,17 @@
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">เทียบเกรด</span>
-          <h2 class="section-title">ตารางเทียบสแตนเลส 304 · 201 · 316/316L · 430</h2>
+          <h2 class="section-title grade-section-title">ตารางเทียบสแตนเลส 304 · 201 · 316/316L · 430</h2>
           <p class="section-sub">ดูส่วนผสม แม่เหล็กดูดไหม ทนสนิมแค่ไหน เหมาะกับงานอะไร</p>
         </div>
         <div class="table-wrap">
           <table class="weight-table grade-table">
             <colgroup>
-              <col style="width:22%">
-              <col style="width:19.5%">
-              <col style="width:19.5%">
-              <col style="width:19.5%">
-              <col style="width:19.5%">
+              <col style="width:18%">
+              <col style="width:20.5%">
+              <col style="width:20.5%">
+              <col style="width:20.5%">
+              <col style="width:20.5%">
             </colgroup>
             <thead>
               <tr>
@@ -565,12 +583,12 @@
               <tr>
                 <th>ส่วนผสมหลัก<br>(โดยประมาณ)</th>
                 <td>โครเมียม ~18%<br>นิกเกิล ~8%<br>("18-8")</td>
-                <td>โครเมียม<br>~16–18%<br>นิกเกิลน้อย<br>~3.5–5.5%<br>ใช้แมงกานีส<br>แทน ~5.5–7.5%</td>
-                <td>โครเมียม<br>~16–18%<br>นิกเกิล ~10%<br>ขึ้นไป<br>มีโมลิบดีนัม<br>~2–3%</td>
-                <td>โครเมียม<br>~16–18%<br>แทบไม่มี<br>นิกเกิล<br>(≤0.75%)</td>
+                <td>โครเมียม <br class="m">~16–18%<br>นิกเกิลน้อย <br class="m">~3.5–5.5%<br>ใช้แมงกานีส <br class="m">แทน ~5.5–7.5%</td>
+                <td>โครเมียม <br class="m">~16–18%<br>นิกเกิล ~10% <br class="m">ขึ้นไป<br>มีโมลิบดีนัม <br class="m">~2–3%</td>
+                <td>โครเมียม <br class="m">~16–18%<br>แทบไม่มี <br class="m">นิกเกิล <br class="m">(≤0.75%)</td>
               </tr>
               <tr>
-                <th>แม่เหล็ก<br>ดูดไหม</th>
+                <th>แม่เหล็ก <br class="m">ดูดไหม</th>
                 <td>ไม่ติด</td>
                 <td>ไม่ติด</td>
                 <td>ไม่ติด</td>
@@ -579,19 +597,19 @@
               <tr>
                 <th>ทนสนิม</th>
                 <td>ดี</td>
-                <td>พอใช้<br>เหมาะงาน<br>ในร่ม</td>
-                <td>ดีที่สุด<br>(ทนน้ำเค็ม/<br>สารเคมี)</td>
+                <td>พอใช้<br>เหมาะงาน <br class="m">ในร่ม</td>
+                <td>ดีที่สุด<br>(ทนน้ำเค็ม/ <br class="m">สารเคมี)</td>
                 <td>พอใช้<br>งานในร่ม</td>
               </tr>
               <tr>
-                <th>เหมาะกับ<br>งาน</th>
+                <th>เหมาะกับ <br class="m">งาน</th>
                 <td>งานทั่วไป<br>งานครัว<br>งานอุตสาหกรรม</td>
-                <td>งานตกแต่ง<br>ทั่วไป<br>ไม่เจอความชื้น/<br>สารเคมีแรง</td>
-                <td>งานริมทะเล<br>งานอาหาร<br>ทะเล โรงงาน<br>เคมี/อาหาร</td>
-                <td>งานตกแต่ง<br>งานเครื่องใช้<br>ไฟฟ้า ไม่เจอ<br>ความชื้น/<br>สารเคมีแรง</td>
+                <td>งานตกแต่ง <br class="m">ทั่วไป<br>ไม่เจอความชื้น/ <br class="m">สารเคมีแรง</td>
+                <td>งานริมทะเล<br>งานอาหาร <br class="m">ทะเล<br class="d"> โรงงาน <br class="m">เคมี/อาหาร</td>
+                <td>งานตกแต่ง<br>งานเครื่องใช้ <br class="m">ไฟฟ้า<br class="d"> ไม่เจอ <br class="m">ความชื้น/ <br class="m">สารเคมีแรง</td>
               </tr>
               <tr>
-                <th>ร้านมี<br>สินค้า</th>
+                <th>ร้านมี <br class="m">สินค้า</th>
                 <td>แผ่น·ท่อกลม<br>ท่อเหลี่ยม·ฉาก<br>และอื่นๆ</td>
                 <td>แผ่น·ท่อกลม<br>ท่อเหลี่ยม</td>
                 <td>แผ่น 316<br>ท่อกลม 316L<br>ฉาก 316L</td>
