@@ -150,6 +150,15 @@
     .nav__list { display: flex; gap: 4px; }
     .nav__link { padding: 8px 14px; border-radius: 8px; font-size: 15px; font-weight: 500; color: var(--ink-muted); transition: color .2s, background .2s; }
     .nav__link:hover { color: var(--navy); background: var(--paper); }
+    .nav__dd { position: relative; }
+    .nav__dd-toggle { display: inline-flex; align-items: center; gap: 4px; background: none; border: 0; cursor: pointer; font-family: inherit; line-height: inherit; }
+    .nav__dd-toggle svg { width: 14px; height: 14px; transition: transform .2s; }
+    .nav__dd-menu { position: absolute; top: 100%; left: 0; min-width: 270px; margin-top: 8px; padding: 8px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transform: translateY(4px); transition: opacity .2s, transform .2s, visibility .2s; z-index: 60; }
+    .nav__dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
+    .nav__dd:hover .nav__dd-menu, .nav__dd.is-open .nav__dd-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav__dd:hover .nav__dd-toggle svg, .nav__dd.is-open .nav__dd-toggle svg { transform: rotate(180deg); }
+    .nav__dd-menu a { display: block; padding: 10px 12px; border-radius: 8px; font-size: 14.5px; font-weight: 500; color: var(--ink-muted); white-space: nowrap; }
+    .nav__dd-menu a:hover { color: var(--orange); background: var(--paper); }
     .header__cta { display: none; }
     .hamburger { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 10px; color: var(--navy); background: var(--paper); border: 1px solid var(--line); }
     .hamburger svg { width: 22px; height: 22px; }
@@ -287,6 +296,9 @@
     .footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 50px 0 24px; }
     .footer__grid { display: grid; gap: 30px; margin-bottom: 36px; }
     @media (min-width: 700px) { .footer__grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+    @media (max-width: 699px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__brand, .footer__grid > .footer__col:last-child { grid-column: 1 / -1; } }
+    @media (min-width: 700px) and (max-width: 999px) { .footer__grid { grid-template-columns: repeat(3, 1fr); } .footer__brand { grid-column: 1 / -1; } }
+    @media (min-width: 1000px) { .footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
     .footer__brand .brand { color: var(--white); margin-bottom: 14px; }
     .footer__brand .brand__tag { color: rgba(255,255,255,.55); }
     .footer__brand p { font-size: 14px; line-height: 1.65; max-width: 340px; }
@@ -365,6 +377,15 @@
         <ul class="nav__list">
           <li><a href="/#about" class="nav__link">เกี่ยวกับเรา</a></li>
           <li><a href="/#products" class="nav__link">สินค้า</a></li>
+          <li class="nav__dd" id="knowledge-nav">
+            <button type="button" class="nav__link nav__dd-toggle" id="knowledge-nav-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="knowledge-nav-menu">ความรู้<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+            <div class="nav__dd-menu" id="knowledge-nav-menu">
+              <a href="/plate-weight/">ตารางน้ำหนักแผ่นสแตนเลส</a>
+              <a href="/pipe-size/">ตารางขนาดท่อสแตนเลส</a>
+              <a href="/stainless-grades/">เทียบเกรดสแตนเลส 304/201/316/430</a>
+              <a href="/faq">คำถามที่พบบ่อย</a>
+            </div>
+          </li>
           <li><a href="/#features" class="nav__link">จุดเด่น</a></li>
           <li><a href="/#portfolio" class="nav__link">ผลงาน</a></li>
           <li><a href="/#contact" class="nav__link">ติดต่อ</a></li>
@@ -415,6 +436,16 @@
           <a href="/channel">รางสแตนเลส</a>
           <a href="/fittings">อุปกรณ์สแตนเลส</a>
           <a href="/consumables">วัสดุสิ้นเปลืองสแตนเลส</a>
+        </div>
+        <button type="button" class="drawer__nav-toggle" id="knowledge-toggle" aria-expanded="false">
+          ความรู้
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="drawer__submenu" id="knowledge-submenu">
+          <a href="/plate-weight/">ตารางน้ำหนักแผ่นสแตนเลส</a>
+          <a href="/pipe-size/">ตารางขนาดท่อสแตนเลส</a>
+          <a href="/stainless-grades/">เทียบเกรดสแตนเลส 304/201/316/430</a>
+          <a href="/faq">คำถามที่พบบ่อย</a>
         </div>
         <a href="/#features">จุดเด่นของเรา</a>
         <a href="/#portfolio">ผลงานของเรา</a>
@@ -677,6 +708,15 @@
           </ul>
         </div>
         <div class="footer__col">
+          <h4>ความรู้</h4>
+          <ul>
+            <li><a href="/plate-weight/">ตารางน้ำหนักแผ่นสแตนเลส</a></li>
+            <li><a href="/pipe-size/">ตารางขนาดท่อสแตนเลส</a></li>
+            <li><a href="/stainless-grades/">เทียบเกรดสแตนเลส 304/201/316/430</a></li>
+            <li><a href="/faq">คำถามที่พบบ่อย</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
           <h4>ติดต่อ</h4>
           <ul>
             <li><a href="tel:0888966878" onclick="reportTelClick()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92Z"></path></svg>088-896-6878</a></li>
@@ -728,6 +768,24 @@
       productsToggle.classList.toggle('is-open', isOpen);
       productsToggle.setAttribute('aria-expanded', isOpen);
     });
+
+    var knowledgeToggle = document.getElementById('knowledge-toggle');
+    var knowledgeSubmenu = document.getElementById('knowledge-submenu');
+    knowledgeToggle.addEventListener('click', function() {
+      var isOpen = knowledgeSubmenu.classList.toggle('is-open');
+      knowledgeToggle.classList.toggle('is-open', isOpen);
+      knowledgeToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    var knowledgeNav = document.getElementById('knowledge-nav');
+    var knowledgeNavToggle = document.getElementById('knowledge-nav-toggle');
+    if (knowledgeNav && knowledgeNavToggle) {
+      var setKnowledgeNav = function(open) { knowledgeNav.classList.toggle('is-open', open); knowledgeNavToggle.setAttribute('aria-expanded', open); };
+      knowledgeNavToggle.addEventListener('click', function(e) { e.stopPropagation(); setKnowledgeNav(!knowledgeNav.classList.contains('is-open')); });
+      knowledgeNav.addEventListener('mouseleave', function() { setKnowledgeNav(false); });
+      document.addEventListener('click', function(e) { if (!knowledgeNav.contains(e.target)) setKnowledgeNav(false); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') setKnowledgeNav(false); });
+    }
 
     var header = document.getElementById('site-header');
     window.addEventListener('scroll', function() {
