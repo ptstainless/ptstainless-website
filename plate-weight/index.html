@@ -461,7 +461,21 @@
       <nav class="nav" aria-label="เมนูหลัก">
         <ul class="nav__list">
           <li><a href="/#about" class="nav__link">เกี่ยวกับเรา</a></li>
-          <li><a href="/#products" class="nav__link">สินค้า</a></li>
+          <li class="nav__dd" id="products-nav">
+            <button type="button" class="nav__link nav__dd-toggle" id="products-nav-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="products-nav-menu">สินค้า<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+            <div class="nav__dd-menu" id="products-nav-menu">
+              <a href="/round-pipe">ท่อกลมสแตนเลส</a>
+              <a href="/square-pipe">ท่อเหลี่ยมสแตนเลส</a>
+              <a href="/plate">แผ่นสแตนเลส</a>
+              <a href="/checker-plate">แผ่นลายสแตนเลส</a>
+              <a href="/angle-bar">ฉากสแตนเลส</a>
+              <a href="/shaft">เพลาสแตนเลส</a>
+              <a href="/flat-bar">แบนสแตนเลส</a>
+              <a href="/channel">รางสแตนเลส</a>
+              <a href="/fittings">อุปกรณ์สแตนเลส</a>
+              <a href="/consumables">วัสดุสิ้นเปลือง</a>
+            </div>
+          </li>
           <li class="nav__dd" id="knowledge-nav">
             <button type="button" class="nav__link nav__dd-toggle" id="knowledge-nav-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="knowledge-nav-menu">ความรู้<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
             <div class="nav__dd-menu" id="knowledge-nav-menu">
@@ -832,15 +846,26 @@
       knowledgeToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    var knowledgeNav = document.getElementById('knowledge-nav');
-    var knowledgeNavToggle = document.getElementById('knowledge-nav-toggle');
-    if (knowledgeNav && knowledgeNavToggle) {
-      var setKnowledgeNav = function(open) { knowledgeNav.classList.toggle('is-open', open); knowledgeNavToggle.setAttribute('aria-expanded', open); };
-      knowledgeNavToggle.addEventListener('click', function(e) { e.stopPropagation(); setKnowledgeNav(!knowledgeNav.classList.contains('is-open')); });
-      knowledgeNav.addEventListener('mouseleave', function() { setKnowledgeNav(false); });
-      document.addEventListener('click', function(e) { if (!knowledgeNav.contains(e.target)) setKnowledgeNav(false); });
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') setKnowledgeNav(false); });
-    }
+    // Desktop dropdowns (สินค้า / ความรู้) — only one open at a time
+    var dds = [["products-nav", "products-nav-toggle"], ["knowledge-nav", "knowledge-nav-toggle"]].map(function(ids){
+      return { li: document.getElementById(ids[0]), btn: document.getElementById(ids[1]) };
+    }).filter(function(d){ return d.li && d.btn; });
+    function setDd(d, open) { d.li.classList.toggle("is-open", open); d.btn.setAttribute("aria-expanded", open); }
+    function closeAllDd(except) { dds.forEach(function(d){ if (d !== except) setDd(d, false); }); }
+    dds.forEach(function(d){
+      d.btn.addEventListener("click", function(e){
+        e.stopPropagation();
+        var open = !d.li.classList.contains("is-open");
+        closeAllDd(d);
+        setDd(d, open);
+      });
+      d.li.addEventListener("mouseenter", function(){ closeAllDd(d); });
+      d.li.addEventListener("mouseleave", function(){ setDd(d, false); });
+    });
+    document.addEventListener("click", function(e){
+      dds.forEach(function(d){ if (!d.li.contains(e.target)) setDd(d, false); });
+    });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeAllDd(null); });
 
     var header = document.getElementById('site-header');
     window.addEventListener('scroll', function() {
