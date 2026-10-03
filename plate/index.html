@@ -339,6 +339,19 @@
     .back-wrap { text-align: center; padding: 8px 20px 8px; }
     .back { display: inline-block; font-size: 14px; color: var(--ink-soft); }
     .back:hover { color: var(--orange); }
+    /* quote box (อยากได้ราคา) */
+    .quote-box { max-width: 720px; margin: 0 auto; background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--orange); border-radius: var(--radius); box-shadow: var(--shadow-md); padding: 28px 24px; }
+    .quote-box__title { font-size: clamp(20px, 4.2vw, 26px); font-weight: 700; line-height: 1.35; color: var(--navy); margin-bottom: 18px; }
+    .quote-box__list { list-style: none; counter-reset: qb; display: grid; gap: 10px; margin: 0 0 18px; padding: 0; }
+    .quote-box__list li { counter-increment: qb; position: relative; padding-left: 40px; min-height: 28px; color: var(--ink); font-size: 16px; line-height: 1.55; overflow-wrap: anywhere; }
+    .quote-box__list li::before { content: counter(qb); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 700; font-size: 14px; display: grid; place-items: center; }
+    .quote-box__list b { color: var(--navy); }
+    .quote-box__list span { color: var(--ink-muted); }
+    .quote-box__note { background: var(--paper); border-radius: var(--radius-sm); padding: 10px 14px; margin: 0 0 10px; font-size: 15px; line-height: 1.55; color: var(--ink-muted); overflow-wrap: anywhere; }
+    .quote-box__btn { width: 100%; margin-top: 8px; justify-content: center; text-align: center; }
+    .quote-box__alt { display: block; text-align: center; margin-top: 12px; font-size: 14px; color: var(--ink-soft); text-decoration: underline; }
+    .quote-box__alt:hover { color: var(--navy); }
+    @media (max-width: 420px) { .quote-box { padding: 22px 16px; } }
   </style>
 </head>
 <body>
@@ -614,6 +627,26 @@
         <p class="specs-note">* สอบถามความหนา/ผิว และสต็อกปัจจุบันทางโทรหรือไลน์ได้เลยค่ะ ไม่มีการแจ้งราคาทางหน้าเว็บ</p>
         <p class="specs-note"><a href="/plate-weight" style="color: var(--steel); font-weight: 600; text-decoration: underline; text-underline-offset: 2px;">ดูตารางน้ำหนักแผ่นสแตนเลส →</a></p>
         <p class="specs-note"><a href="/stainless-grades" style="color: var(--steel); font-weight: 600; text-decoration: underline; text-underline-offset: 2px;">เทียบเกรด 304 / 201 / 316 / 430 ต่างกันยังไง →</a></p>
+      </div>
+    </section>
+
+    <!-- Quote box: อยากได้ราคา -->
+    <section class="section section--paper">
+      <div class="container">
+        <div class="quote-box">
+          <h2 class="quote-box__title">💬 อยากได้ราคาเร็ว? ทัก LINE ส่ง 4 อย่างนี้มาได้เลย</h2>
+          <ol class="quote-box__list">
+            <li><b>สินค้า + เกรด</b> <span>— เช่น แผ่น 304 ผิว 2B</span></li>
+            <li><b>ขนาด + ความหนา</b> <span>— เช่น แผ่น 4×8 ฟุต หนา 1.5 มม.</span></li>
+            <li><b>จำนวน</b> <span>— กี่แผ่น</span></li>
+            <li><b>ส่งที่ไหน</b> <span>— อำเภอหรือนิคม (มารับเองที่ร้านพานทองก็ได้)</span></li>
+          </ol>
+          <p class="quote-box__note">📷 ไม่แน่ใจขนาด? ถ่ายรูปหน้างานหรือแบบงานส่งมา ทีมงานช่วยเลือกให้</p>
+          <p class="quote-box__note">🧾 ต้องการใบเสนอราคา / ใบกำกับภาษีในนามบริษัท? แจ้งชื่อบริษัทมาพร้อมกันได้เลย</p>
+          <p class="quote-box__note">⏱️ ตอบกลับภายใน 15 นาที (จันทร์–เสาร์ 8:00–16:30 น.)</p>
+          <a href="https://line.me/R/oaMessage/%40ptstainless/?%E0%B8%82%E0%B8%AD%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%9A%2F%E0%B8%84%E0%B9%88%E0%B8%B0%0A%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%2B%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B8%94%3A%0A%E0%B8%82%E0%B8%99%E0%B8%B2%E0%B8%94%2B%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%99%E0%B8%B2%3A%0A%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99%3A%0A%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%3A" target="_blank" rel="noopener" class="btn btn--line btn--lg quote-box__btn" onclick="reportLineClick()">🟢 ส่งรายการทาง LINE</a>
+          <a href="https://line.me/R/ti/p/@ptstainless" target="_blank" rel="noopener" class="quote-box__alt" onclick="reportLineClick()">หรือเพิ่มเพื่อน LINE @ptstainless</a>
+        </div>
       </div>
     </section>
 
